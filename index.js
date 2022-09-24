@@ -47,6 +47,6 @@ server.use(function (err, req, res, next) {
   res.status(500).json({ success: false, error: err.message });
 });
 
-log('Server listening to 3000, metrics exposed on /metrics endpoint');
+log('Server listening to' + process.env.PORT + ', metrics exposed on /metrics endpoint');
 log('Listening for heartbeats on /heartbeat/:name and authorizing with secret: ' + process.env.SECRET);
-server.listen(3000);
+server.listen(process.env.PORT);
